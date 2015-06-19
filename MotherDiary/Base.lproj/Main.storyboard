@@ -28,6 +28,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="kha-2r-zQw"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wgc-v3-ebN">
+                                <rect key="frame" x="60" y="225" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YTP-m8-FeB"/>
+                                </connections>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKj-hd-7y6">
                                 <rect key="frame" x="130" y="355" width="60" height="30"/>
                                 <constraints>
@@ -38,17 +46,8 @@
                                 </state>
                                 <connections>
                                     <action selector="loginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uDY-0C-ZgH"/>
-                                    <segue destination="DU2-eP-Xu1" kind="modal" identifier="main" id="foj-b4-TCM"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wgc-v3-ebN">
-                                <rect key="frame" x="60" y="225" width="200" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YTP-m8-FeB"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -64,11 +63,12 @@
                     <connections>
                         <outlet property="password" destination="wgc-v3-ebN" id="fUa-hD-G8G"/>
                         <outlet property="username" destination="HMl-6t-qTZ" id="OSh-ts-Cda"/>
+                        <segue destination="DU2-eP-Xu1" kind="modal" identifier="main" id="Riu-8s-Ksx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="596.26666666666665" y="275.48000000000002"/>
+            <point key="canvasLocation" x="322" y="284"/>
         </scene>
         <!--所有日记-->
         <scene sceneID="bQk-L6-7lJ">
@@ -130,7 +130,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sg7-pR-NtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485" y="275"/>
+            <point key="canvasLocation" x="1192" y="284"/>
         </scene>
         <!--新建日记-->
         <scene sceneID="NRm-eq-DRs">
@@ -201,13 +201,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ex3-rO-MVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946" y="275"/>
+            <point key="canvasLocation" x="1637" y="284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IlQ-aT-LW3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DU2-eP-Xu1" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="WnV-YC-V4A"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P1S-ZV-fCO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -219,7 +220,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peI-Vq-Lzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1040" y="275"/>
+            <point key="canvasLocation" x="760" y="284"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

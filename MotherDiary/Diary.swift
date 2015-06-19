@@ -13,6 +13,6 @@ class Diary : BmobObject {
     var title : String?
     var content : String?
     var pic : String?
-    var user : User?
+    var user : BmobUser?
     
 }

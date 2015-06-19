@@ -17,7 +17,7 @@ class MainController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        var user = User.getCurrentObject()
+        var user = User.getCurrentUser()
         var bquery : BmobQuery = BmobQuery(className: "Diary")
         bquery.whereKey("user", equalTo: user)
         bquery.findObjectsInBackgroundWithBlock { (array, error) -> Void in

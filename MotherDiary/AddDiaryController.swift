@@ -20,11 +20,16 @@ class AddDiaryController: UIViewController, UITextFieldDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func addDiaryClick(sender: UIButton) {
-        
+        if (txtTitle.text != nil && txtContent.text != nil) {
+            var diary = Diary()
+            diary.title = txtTitle.text
+            diary.content = txtTitle.text
+            diary.user = BmobUser.getCurrentUser()
+            
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
