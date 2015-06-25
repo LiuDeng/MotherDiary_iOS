@@ -154,7 +154,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addDiaryClick:" destination="rJR-35-nvh" eventType="touchUpInside" id="r4x-uA-dlL"/>
+                                    <action selector="addPhotoClick:" destination="rJR-35-nvh" eventType="touchUpInside" id="xsU-1n-hgw"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入内容" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t81-uo-KAf">
@@ -179,22 +179,36 @@
                                     <outlet property="delegate" destination="rJR-35-nvh" id="ctm-XH-Yg3"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PX5-UV-B1K">
+                                <rect key="frame" x="104" y="62" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Xca-Yy-HqL"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Kbj-hu-3ph" firstAttribute="leading" secondItem="cpF-i6-94a" secondAttribute="leading" id="1DQ-ae-22X"/>
                             <constraint firstItem="cpF-i6-94a" firstAttribute="top" secondItem="4fU-nB-HNd" secondAttribute="bottom" constant="8" symbolic="YES" id="58S-hj-B8V"/>
                             <constraint firstItem="Kbj-hu-3ph" firstAttribute="top" secondItem="cpF-i6-94a" secondAttribute="bottom" constant="8" symbolic="YES" id="5lG-3R-ZYQ"/>
+                            <constraint firstItem="Kbj-hu-3ph" firstAttribute="top" secondItem="PX5-UV-B1K" secondAttribute="bottom" constant="8" symbolic="YES" id="82z-Dq-o3c"/>
                             <constraint firstItem="cpF-i6-94a" firstAttribute="leading" secondItem="aY8-rz-rK5" secondAttribute="leadingMargin" id="Hlc-7v-ixk"/>
                             <constraint firstItem="t81-uo-KAf" firstAttribute="trailing" secondItem="Kbj-hu-3ph" secondAttribute="trailing" id="K5n-k3-Awt"/>
                             <constraint firstItem="t81-uo-KAf" firstAttribute="top" secondItem="Kbj-hu-3ph" secondAttribute="bottom" constant="8" symbolic="YES" id="RLi-so-vQz"/>
+                            <constraint firstItem="PX5-UV-B1K" firstAttribute="leading" secondItem="cpF-i6-94a" secondAttribute="trailing" constant="8" symbolic="YES" id="ZXj-uZ-ql3"/>
                             <constraint firstItem="t81-uo-KAf" firstAttribute="leading" secondItem="Kbj-hu-3ph" secondAttribute="leading" id="jUG-fd-Len"/>
+                            <constraint firstItem="PX5-UV-B1K" firstAttribute="top" secondItem="aY8-rz-rK5" secondAttribute="topMargin" constant="62" id="tJC-xT-h6f"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="新建日记" id="f6A-ch-sNe">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="v6Z-DI-fft"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="v6Z-DI-fft">
+                            <connections>
+                                <action selector="doneClick:" destination="rJR-35-nvh" id="6nx-8K-LIc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imgPhoto" destination="PX5-UV-B1K" id="9j7-5L-tlO"/>
                         <outlet property="txtContent" destination="t81-uo-KAf" id="B6I-zq-R1S"/>
                         <outlet property="txtTitle" destination="Kbj-hu-3ph" id="Hjs-ar-z5T"/>
                     </connections>

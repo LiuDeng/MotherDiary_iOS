@@ -17,12 +17,17 @@ class MainController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        var user = User.getCurrentUser()
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.diarys.removeAll(keepCapacity: false)
+        var user = BmobUser.getCurrentUser()
         var bquery : BmobQuery = BmobQuery(className: "Diary")
         bquery.whereKey("user", equalTo: user)
         bquery.findObjectsInBackgroundWithBlock { (array, error) -> Void in
             for obj in array{
-                if obj is BmobObject{
+                if obj is BmobObject {
                     var diary = Diary();
                     diary.title = obj.objectForKey("title") as? String
                     diary.content = obj.objectForKey("content") as? String
