@@ -16,7 +16,7 @@
 		4908803B1B2AB19E0010B1FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490880391B2AB19E0010B1FF /* LaunchScreen.xib */; };
 		490880471B2AB19E0010B1FF /* MotherDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490880461B2AB19E0010B1FF /* MotherDiaryTests.swift */; };
 		490880511B2AB1D80010B1FF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 490880501B2AB1D80010B1FF /* Podfile */; };
-		49782B2A1B2EA889007507C2 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49782B291B2EA889007507C2 /* MainController.swift */; };
+		49782B2A1B2EA889007507C2 /* DiaryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49782B291B2EA889007507C2 /* DiaryListController.swift */; };
 		49782B2D1B2EC243007507C2 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49782B2C1B2EC243007507C2 /* DiaryTableViewCell.swift */; };
 		49FBCD1C1B31283C00471D39 /* AddDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBCD1B1B31283C00471D39 /* AddDiaryController.swift */; };
 /* End PBXBuildFile section */
@@ -46,7 +46,7 @@
 		490880451B2AB19E0010B1FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490880461B2AB19E0010B1FF /* MotherDiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherDiaryTests.swift; sourceTree = "<group>"; };
 		490880501B2AB1D80010B1FF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		49782B291B2EA889007507C2 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		49782B291B2EA889007507C2 /* DiaryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryListController.swift; sourceTree = "<group>"; };
 		49782B2C1B2EC243007507C2 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		49E603EB1B2AB4AF00128E17 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		49FBCD1B1B31283C00471D39 /* AddDiaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDiaryController.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 		49BCA0421B2ED54600AA2A17 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				49782B291B2EA889007507C2 /* MainController.swift */,
+				49782B291B2EA889007507C2 /* DiaryListController.swift */,
 				490880321B2AB19E0010B1FF /* LoginController.swift */,
 				49FBCD1B1B31283C00471D39 /* AddDiaryController.swift */,
 			);
@@ -317,7 +317,7 @@
 				49FBCD1C1B31283C00471D39 /* AddDiaryController.swift in Sources */,
 				490880331B2AB19E0010B1FF /* LoginController.swift in Sources */,
 				490880311B2AB19E0010B1FF /* AppDelegate.swift in Sources */,
-				49782B2A1B2EA889007507C2 /* MainController.swift in Sources */,
+				49782B2A1B2EA889007507C2 /* DiaryListController.swift in Sources */,
 				49782B2D1B2EC243007507C2 /* DiaryTableViewCell.swift in Sources */,
 				49068DC31B39009700A707DE /* Diary.swift in Sources */,
 			);

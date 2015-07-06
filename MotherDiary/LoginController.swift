@@ -24,11 +24,13 @@ class LoginController: UIViewController, UITextFieldDelegate {
                 println("Login failed." + error.description)
             } else {
                 println("Login success")
-                self.performSegueWithIdentifier("main", sender: self)
+                // 如果登陆成功，则执行segue跳转到MainController
+                self.performSegueWithIdentifier("main", sender: nil)
             }
         })
     }
     
+    // 当键盘上的return键点击时触发
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         let nextTag = textField.tag + 1
         let nextResponder = textField.superview?.viewWithTag(nextTag) as UIResponder!
@@ -39,7 +41,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
         }
         return false;
     }
-    
     
 }
 

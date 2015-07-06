@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainController: UITableViewController {
+class DiaryListController: UITableViewController {
     
     var diarys : Array<Diary> = []
     
@@ -48,6 +48,10 @@ class MainController: UITableViewController {
         cell.diaryTitle.text = diarys[indexPath.row].title
         cell.diaryContent.text = diarys[indexPath.row].content
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
     }
     
 }
