@@ -15,10 +15,12 @@ class AddDiaryController: UIViewController, UITextFieldDelegate, UINavigationCon
     @IBOutlet weak var imgPhoto: UIImageView!
     
     var imagePicker = UIImagePickerController()
+    var diary : Diary?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         txtContent.contentVerticalAlignment = UIControlContentVerticalAlignment.Top
+        updateUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +29,6 @@ class AddDiaryController: UIViewController, UITextFieldDelegate, UINavigationCon
     
     @IBAction func addPhotoClick(sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
-            println("Button capture")
             
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum;
@@ -39,20 +40,36 @@ class AddDiaryController: UIViewController, UITextFieldDelegate, UINavigationCon
     
     // 完成按钮点击
     @IBAction func doneClick(sender: UIBarButtonItem) {
-        if (txtTitle.text != nil && txtContent.text != nil) {
-            var diary:BmobObject = BmobObject(className: "Diary")
-            diary.setObject(txtTitle.text, forKey: "title")
-            diary.setObject(txtContent.text, forKey: "content")
-            diary.setObject(BmobUser.getCurrentUser(), forKey: "user")
-            diary.saveInBackgroundWithResultBlock({ isSuccess, error -> Void in
+        if (self.diary == nil) {
+            // 新建日记
+            if (txtTitle.text != nil && txtContent.text != nil) {
+                var diary = Diary()
+                diary.title = txtTitle.text
+                diary.content = txtContent.text
+                diary.user = AVUser.currentUser()
+                diary.saveInBackgroundWithBlock({ (isSuccess, error) -> Void in
+                    if (isSuccess) {
+                        println("save success")
+                        self.navigationController?.popViewControllerAnimated(true)
+                    } else {
+                        println("save failed \(error)")
+                    }
+                })
+            }
+        } else {
+            // 编辑日记
+            self.diary?.title = txtTitle.text
+            self.diary?.content = txtContent.text
+            self.diary?.saveInBackgroundWithBlock({ (isSuccess, error) -> Void in
                 if (isSuccess) {
                     println("save success")
                     self.navigationController?.popViewControllerAnimated(true)
                 } else {
-                    println("save failed")
+                    println("save failed \(error)")
                 }
-            });
+            })
         }
+        
     }
     
     // 处理TextField的返回的点击事件
@@ -72,9 +89,14 @@ class AddDiaryController: UIViewController, UITextFieldDelegate, UINavigationCon
         
         dismissViewControllerAnimated(true, completion: nil)
     }
-
-    @IBAction func showDairyDetail(segue: UIStoryboardSegue){
-        
+    
+    func updateUI() {
+        if (diary != nil) {
+            txtTitle.text = diary!.objectForKey(Constants.Diary.title) as? String;
+            txtContent.text = diary!.objectForKey(Constants.Diary.content) as? String;
+            self.title = "编辑日记"
+        } else {
+            self.title = "新建日记"
+        }
     }
-
 }

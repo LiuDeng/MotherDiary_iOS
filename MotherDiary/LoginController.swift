@@ -13,21 +13,21 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     @IBAction func loginClick(sender: UIButton) {
-        BmobUser.loginWithUsernameInBackground(username.text, password: password.text, block: { (user:BmobUser!, error:NSError!) -> Void in
+        AVUser.logInWithUsernameInBackground(username.text, password: password.text) { (user, error) -> Void in
             println("username: \(self.username.text) password \(self.password.text)")
             if(error != nil) {
                 println("Login failed." + error.description)
             } else {
                 println("Login success")
                 // 如果登陆成功，则执行segue跳转到MainController
-                self.performSegueWithIdentifier("main", sender: nil)
+                self.performSegueWithIdentifier("loginSuccess", sender: nil)
             }
-        })
+        }
     }
     
     // 当键盘上的return键点击时触发

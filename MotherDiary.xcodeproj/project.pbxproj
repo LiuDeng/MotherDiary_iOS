@@ -16,8 +16,10 @@
 		4908803B1B2AB19E0010B1FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490880391B2AB19E0010B1FF /* LaunchScreen.xib */; };
 		490880471B2AB19E0010B1FF /* MotherDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490880461B2AB19E0010B1FF /* MotherDiaryTests.swift */; };
 		490880511B2AB1D80010B1FF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 490880501B2AB1D80010B1FF /* Podfile */; };
+		495EE0481B4B6ADC00CD925C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EE0471B4B6ADC00CD925C /* Constants.swift */; };
 		49782B2A1B2EA889007507C2 /* DiaryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49782B291B2EA889007507C2 /* DiaryListController.swift */; };
 		49782B2D1B2EC243007507C2 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49782B2C1B2EC243007507C2 /* DiaryTableViewCell.swift */; };
+		4985AF4C1B57DF81007CAAF5 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985AF4B1B57DF81007CAAF5 /* RegisterController.swift */; };
 		49FBCD1C1B31283C00471D39 /* AddDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBCD1B1B31283C00471D39 /* AddDiaryController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +48,10 @@
 		490880451B2AB19E0010B1FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490880461B2AB19E0010B1FF /* MotherDiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherDiaryTests.swift; sourceTree = "<group>"; };
 		490880501B2AB1D80010B1FF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		495EE0471B4B6ADC00CD925C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		49782B291B2EA889007507C2 /* DiaryListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryListController.swift; sourceTree = "<group>"; };
 		49782B2C1B2EC243007507C2 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
+		4985AF4B1B57DF81007CAAF5 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		49E603EB1B2AB4AF00128E17 /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		49FBCD1B1B31283C00471D39 /* AddDiaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDiaryController.swift; sourceTree = "<group>"; };
 		A431DB5307ADAA632528F276 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,10 +102,9 @@
 			children = (
 				49BCA0421B2ED54600AA2A17 /* ViewController */,
 				49782B2B1B2EC1DB007507C2 /* View */,
+				49E603EE1B2ACFD900128E17 /* Model */,
 				490880301B2AB19E0010B1FF /* AppDelegate.swift */,
 				490880341B2AB19E0010B1FF /* Main.storyboard */,
-				490880391B2AB19E0010B1FF /* LaunchScreen.xib */,
-				49E603EE1B2ACFD900128E17 /* Model */,
 				4908802E1B2AB19E0010B1FF /* Supporting Files */,
 				49E603EB1B2AB4AF00128E17 /* Swift-Bridging-Header.h */,
 			);
@@ -111,6 +114,7 @@
 		4908802E1B2AB19E0010B1FF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				490880391B2AB19E0010B1FF /* LaunchScreen.xib */,
 				490880371B2AB19E0010B1FF /* Images.xcassets */,
 				4908802F1B2AB19E0010B1FF /* Info.plist */,
 			);
@@ -148,6 +152,7 @@
 				49782B291B2EA889007507C2 /* DiaryListController.swift */,
 				490880321B2AB19E0010B1FF /* LoginController.swift */,
 				49FBCD1B1B31283C00471D39 /* AddDiaryController.swift */,
+				4985AF4B1B57DF81007CAAF5 /* RegisterController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				49068DC21B39009700A707DE /* Diary.swift */,
+				495EE0471B4B6ADC00CD925C /* Constants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -318,6 +324,8 @@
 				490880331B2AB19E0010B1FF /* LoginController.swift in Sources */,
 				490880311B2AB19E0010B1FF /* AppDelegate.swift in Sources */,
 				49782B2A1B2EA889007507C2 /* DiaryListController.swift in Sources */,
+				4985AF4C1B57DF81007CAAF5 /* RegisterController.swift in Sources */,
+				495EE0481B4B6ADC00CD925C /* Constants.swift in Sources */,
 				49782B2D1B2EC243007507C2 /* DiaryTableViewCell.swift in Sources */,
 				49068DC31B39009700A707DE /* Diary.swift in Sources */,
 			);
@@ -453,7 +461,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/BmobSDK",
+					"$(PROJECT_DIR)/Pods/AVOSCloud",
 				);
 				INFOPLIST_FILE = MotherDiary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -472,7 +480,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/BmobSDK",
+					"$(PROJECT_DIR)/Pods/AVOSCloud",
 				);
 				INFOPLIST_FILE = MotherDiary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

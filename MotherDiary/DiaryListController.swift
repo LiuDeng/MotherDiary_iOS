@@ -22,16 +22,12 @@ class DiaryListController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         self.diarys.removeAll(keepCapacity: false)
-        var user = BmobUser.getCurrentUser()
-        var bquery : BmobQuery = BmobQuery(className: "Diary")
-        bquery.whereKey("user", equalTo: user)
-        bquery.findObjectsInBackgroundWithBlock { (array, error) -> Void in
+        var query = Diary.query()
+        query.whereKey("user", equalTo: AVUser.currentUser())
+        query.findObjectsInBackgroundWithBlock  { (array, error) -> Void in
             for obj in array{
-                if obj is BmobObject {
-                    var diary = Diary();
-                    diary.title = obj.objectForKey("title") as? String
-                    diary.content = obj.objectForKey("content") as? String
-                    self.diarys.append(diary)
+                if obj is Diary {
+                    self.diarys.append(obj as! Diary)
                 }
             }
             self.tableView.reloadData()
@@ -45,13 +41,27 @@ class DiaryListController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("diaryCell") as! DiaryTableViewCell
         
-        cell.diaryTitle.text = diarys[indexPath.row].title
-        cell.diaryContent.text = diarys[indexPath.row].content
+        cell.diaryTitle.text = diarys[indexPath.row].objectForKey(Constants.Diary.title) as? String
+        cell.diaryContent.text = diarys[indexPath.row].objectForKey(Constants.Diary.content) as? String
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        let diary = diarys[indexPath.row]
+        performSegueWithIdentifier("showDiaryDetail", sender: diary);
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showDiaryDetail":
+                // 如果segue的目标viewController是新建日记的话，传递一个日记对象
+                if let dvc = segue.destinationViewController as? AddDiaryController {
+                    dvc.diary = sender as? Diary
+                }
+            default: break
+            }
+        }
     }
     
 }

@@ -1,1 +1,1 @@
-pod 'BmobSDK'
+pod 'AVOSCloud'

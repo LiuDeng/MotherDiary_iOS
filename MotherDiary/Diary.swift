@@ -8,11 +8,26 @@
 
 import Foundation
 
-class Diary : BmobObject {
+class Diary : AVObject, AVSubclassing {
     
-    var title : String?
-    var content : String?
-    var pic : String?
-    var user : BmobUser?
+    /// 标题
+    @NSManaged var title : String?
+    
+    /// 正文
+    @NSManaged var content : String?
+    
+    /// 图片
+    @NSManaged var pic : String?
+    
+    /// 属于的用户
+    @NSManaged var user : AVUser?
+    
+    static func parseClassName() -> String! {
+        return "Diary"
+    }
+    
+    override init() {
+        super.init();
+    }
     
 }
